@@ -434,6 +434,12 @@ body {
     margin: 90px 0 60px 0;
 }
 
+@media only screen and (max-width: 780px) {
+    .header .header_menu .navbar-toggle {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 640px) {
     .gallery .gallery_foto_box {
         -ms-flex-flow: column nowrap;
@@ -448,6 +454,9 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+    .header .header_menu .navbar-toggle {
+        display: block;
+    }
     .reviews .reviews_carousel .carousel_box {
         height: 500px;
     }
@@ -463,6 +472,5 @@ body {
     }
     .header .header_menu .navigation .tab {
         display: block;
-        
     }
 }
