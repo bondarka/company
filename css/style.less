@@ -1,0 +1,339 @@
+@bodyBackground: #fff;
+@textColor: #fff;
+@colorBannerLine: #fff;
+@headerColor: #96db4c;
+@fontSize: 18px;
+@headerLogoColor: #000;
+@colorTitleBlock: #595959;
+@colorName: #82d42a;
+@colorCarouselLine: #1e3910;
+@markerSize: 35px;
+html {
+    height: 100%;
+}
+
+body {
+    background-color: @bodyBackground;
+    font-family: "Roboto", sans-serif;
+    font-size: @fontSize;
+}
+
+.header {
+    background-color: @headerColor;
+    .header_menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        .header_logo {
+            font-family: "Nunito", sans-serif;
+            flex: 0 1 auto;
+            font-size: @fontSize*1.5;
+            color: @textColor;
+            .logo_color {
+                color: @headerLogoColor;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            flex: 1 1 auto;
+            list-style-type: none;
+            .tab {
+                color: @textColor;
+                font-size: @fontSize;
+                padding: 0 28px;
+                &:hover {
+                    text-decoration: underline;
+                    color: @colorTitleBlock;
+                    transition: color ease-out .5s;
+                }
+                &:active {
+                    text-decoration: underline;
+                    color: @colorTitleBlock;
+                }
+            }
+        }
+        .header_tel a {
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 auto;
+            color: @textColor;
+            &:hover {
+                text-decoration: underline;
+                color: @colorTitleBlock;
+                transition: color ease-out .5s;
+            }
+        }
+    }
+}
+
+.banner {
+    background-image: url(../images/banner.png);
+    background-size: cover;
+    background-position: 0 50%;
+    height: 699px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &_background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.55);
+    }
+    &_info {
+        display: flex;
+        flex: 0 1 auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: @textColor;
+        z-index: 1;
+        max-width: 800px;
+        .top_caption {
+            font-size: @fontSize*3.8;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+        }
+        .banner_line {
+            width: 105px;
+            height: 5px;
+            margin: 30px 0;
+            background-color: @colorBannerLine;
+            color: @colorBannerLine;
+        }
+        .banner_text {
+            max-width: 700px;
+            text-align: center;
+        }
+    }
+}
+
+.reviews {
+    .reviews_carousel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        .review_navigation {
+            flex: 0 1 auto;
+            .bullet {
+                margin: 50px 0;
+                background-color: @colorName;
+                width: @markerSize;
+                height: @markerSize;
+                border-radius: 50%;
+                position: relative;
+                &:before {
+                    content: '';
+                    background-color: white;
+                    width: @markerSize*2/3;
+                    height: @markerSize*2/3;
+                    position: absolute;
+                    border-radius: 50%;
+                    top: @markerSize/2 - @markerSize*2/6;
+                    left: @markerSize/2 - @markerSize*2/6;
+                }
+                &.active:after {
+                    content: '';
+                    background-color: @colorName;
+                    width: @markerSize/2;
+                    height: @markerSize/2;
+                    position: absolute;
+                    border-radius: 50%;
+                    top: @markerSize/2 - @markerSize/4;
+                    left: @markerSize/2 - @markerSize/4;
+                }
+            }
+        }
+        .carousel_box {
+            max-width: 530px;
+            height: 430px;
+            overflow: hidden;
+            flex: 1 1 auto;
+            .carousel_list {
+                list-style-type: none;
+                text-align: center;
+                transition: transform 0.5s ease-in-out;
+                .carousel_item {
+                    margin: 0;
+                    padding: 0;
+                    .name {
+                        color: @colorName;
+                        font-size: @fontSize*1.8;
+                    }
+                    .carousel_line {
+                        width: 105px;
+                        height: 5px;
+                        margin-top: 30px;
+                        margin-bottom: 30px;
+                        color: @colorCarouselLine;
+                        background-color: @colorCarouselLine;
+                    }
+                    .carousel_text {
+                        font-size: @fontSize*1.1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery {
+    .gallery_foto_box {
+        flex-flow: row wrap;
+        display: -webkit-box;
+        display: flex;
+        .foto_box {
+            flex: 1 0 25%;
+            min-width: 25%;
+            padding: .5rem;
+            .gallery_foto {
+                width: 100%;
+                height: auto;
+            }
+            &:hover {
+                filter: grayscale(60%);
+            }
+        }
+    }
+}
+
+.contact_us {
+    background-image: url(../images/grass_background.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    .contact_form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        alegn-items: center;
+        align-content: center;
+        padding: 20px 0 170px 0;
+        .form_control {
+            margin: .5rem;
+            width: 265px;
+            height: 55px;
+            padding: 10px;
+            font-style: italic;
+            font-size: @fontSize*0.8;
+            font-weight: 100;
+            border: 1px solid @colorCarouselLine;
+            &:focus {
+                outline: 2px solid @colorName;
+            }
+        }
+        .btn.btn_send {
+            width: 265px;
+            background-color: @colorName;
+            color: @textColor;
+            font-size: @fontSize*1.2;
+            border-radius: 0;
+            height: 55px;
+            padding: 0;
+            margin: .5rem;
+            outline: none;
+            &:focus {
+                box-shadow: 5px 5px 5px @colorCarouselLine;
+            }
+            &:hover {
+                background-color: transparent;
+                color: @colorName;
+                border: 2px solid @colorName;
+            }
+        }
+    }
+}
+
+.footer {
+    background-image: url(../images/footer_background.png);
+    background-repeat: repeat;
+    .footer_menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 30px 0;
+        .footer_logo {
+            font-family: "Nunito", sans-serif;
+            flex: 0 1 auto;
+            font-size: @fontSize*1.5;
+            color: @textColor;
+            line-height: 50px;
+            .logo_color {
+                color: @colorName;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .footer_tel a {
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 auto;
+            color: @textColor;
+            &:hover {
+                text-decoration: underline;
+                color: @colorName;
+                transition: color ease-out .5s;
+            }
+        }
+    }
+}
+
+.block {
+    .title_block {
+        font-size: @fontSize*2.5;
+        color: @colorTitleBlock;
+        font-weight: bold;
+        text-align: center;
+        margin: 90px 0 60px 0;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .gallery {
+        .gallery_foto_box {
+            flex-flow: column nowrap;
+        }
+    }
+    .header {
+        .header_menu {
+            .navigation {
+                text-align: center;
+                .tab {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .reviews {
+        .reviews_carousel {
+            .carousel_box {
+                height: 500px;
+            }
+        }
+    }
+    .footer {
+        .footer_menu {
+            justify-content: center;
+        }
+    }
+}
